@@ -1,0 +1,6 @@
+type Tutor @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  firstname: String
+  lastname: String
+  branch: String
+}
