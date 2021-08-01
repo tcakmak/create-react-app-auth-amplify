@@ -4,8 +4,16 @@ import './App.css';
 import { withAuthenticator } from 'aws-amplify-react'
 import Amplify, { Auth } from 'aws-amplify';
 import aws_exports from './aws-exports';
+import { DataStore } from '@aws-amplify/datastore';
+import { Tutor } from './models';
 Amplify.configure(aws_exports);
-
+await DataStore.save(
+    new Tutor({
+		"firstname": "Lorem ipsum dolor sit amet",
+		"lastname": "Lorem ipsum dolor sit amet",
+		"branch": "Lorem ipsum dolor sit amet"
+	})
+);
 class App extends Component {
   render() {
     return (
